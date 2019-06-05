@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def main(request):
-    return render(request, 'mainapp/main.html')
+    return render(request, 'mainapp/main.html', {'username': 'alexey', 'array': [1, 2, 3, 4, 5]})
 
 
 def products(request):
