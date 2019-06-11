@@ -1,3 +1,12 @@
-<a href="{% url 'main' %}">Главная</a>
-<a href="{% url 'products' %}">Продукты</a>
-<a href="{% url 'contacts' %}">Контакты</a>
+<ul class="links-menu">
+    {% for link in links_menu %}
+        <li>
+            <a href="{% url link.href %}"
+               class="{% if request.resolver_match.url_name == link.href %}
+                        active
+                      {% endif %}">
+                {{ link.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
