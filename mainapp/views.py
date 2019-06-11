@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import json, os
+from .models import Product
 
 JSON_PATH = 'mainapp/json'
 
@@ -11,13 +12,13 @@ def loadMenuFromJSON():
 
 def main(request):
     links_menu = loadMenuFromJSON()
-    context = {'links_menu': links_menu, 'username': 'alexey', 'array': [1, 2, 3, 4, 5]}
+    context = {'links_menu': links_menu, 'username': 'alexey'}
     return render(request, 'mainapp/main.html', context)
 
 
 def products(request):
     links_menu = loadMenuFromJSON()
-    context = {'links_menu': links_menu}
+    context = {'links_menu': links_menu, 'products': Product.objects.all()}
     return render(request, 'mainapp/products.html', context)
 
 
