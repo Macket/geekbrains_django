@@ -6,10 +6,15 @@
 
 {% block content %}
     <h1 class="test">Главная</h1>
-    <h2>Привет, {{ username|title }}!</h2>
-    {% if username == 'ivan' %}
-        <div>Ты Иван</div>
+    {% if request.user.is_authenticated  %}
+        <h2>Привет, {{ request.user.username|title }}!</h2>
+        <a href="{% url "auth:logout" %}">Выйти</a>
+        <br>
+        <a href="{% url "auth:edit" request.user.pk %}">Редактировать профиль</a>
     {% else %}
-        <div>Ты не Иван</div>
+        <h2>Привет!</h2>
+        <a href="{% url "auth:login" %}">Войти</a>
+        <br>
+        <a href="{% url "auth:register" %}">Зарегистрироваться</a>
     {% endif %}
 {% endblock %}

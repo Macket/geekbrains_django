@@ -1,0 +1,10 @@
+{% extends 'authapp/base.html' %}
+
+{% block content %}
+    <form class="form-horizontal" action='{% url "auth:login" %}' method="POST">
+        {% csrf_token %}
+        <input class="form-control" name="username" placeholder="Имя пользователя"><br>
+        <input class="form-control" name="password" type="password" placeholder="Пароль"><br>
+        <input class="form-control" type="submit" value="Войти">
+    </form>
+{% endblock %}
