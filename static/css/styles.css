@@ -1,5 +1,13 @@
-.test {
-    color: red;
+.menu {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.menu-item {
+    margin: 5px;
 }
 
 .active {
