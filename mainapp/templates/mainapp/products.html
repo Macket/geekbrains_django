@@ -1,14 +1,27 @@
 {% extends 'mainapp/base.html' %}
 
 {% block title %}
-    <title>Продукт</title>
+    <title>Продукты</title>
 {% endblock %}
 
 {% block content %}
     <h1>Продукты</h1>
-    <ul>
+{#    <div>Количество продуктов в корзине: {{ basket_quantity }}</div>#}
+{#    {% include 'mainapp/includes/inc_category_menu.html' %}#}
+    <div style="display: flex; flex-wrap: wrap;" class="category-products clearfix">
         {% for product in products %}
-            <li>{{ product.name }}</li>
+            <div style="margin: 20px" class="block">
+                  <div class="card" style="width: 18rem;">
+                      <img src="/media/{{ product.image }}" class="card-img-top" alt="product">
+                      <div class="card-body">
+                          <h5 class="card-title">{{ product.name }}</h5>
+                          <p class="card-text">{{ product.short_desc }}</p>
+                          <a href="#">Добавить в корзину</a>
+                          <br>
+                          <a href="#">Удалить из корзины</a>
+                      </div>
+                  </div>
+              </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
