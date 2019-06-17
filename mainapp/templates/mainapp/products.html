@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Продукты</h1>
-{#    <div>Количество продуктов в корзине: {{ basket_quantity }}</div>#}
-{#    {% include 'mainapp/includes/inc_category_menu.html' %}#}
+    <h1>Продукты</h1><br>
+    <div>Количество продуктов в корзине: {{ basket|length }}</div>
+    <h3>Категории</h3>
+    {% include 'mainapp/includes/inc_category_menu.html' %}
+    <br><br>
     <div style="display: flex; flex-wrap: wrap;" class="category-products clearfix">
         {% for product in products %}
             <div style="margin: 20px" class="block">
@@ -16,9 +18,9 @@
                       <div class="card-body">
                           <h5 class="card-title">{{ product.name }}</h5>
                           <p class="card-text">{{ product.short_desc }}</p>
-                          <a href="#">Добавить в корзину</a>
+                          <a href="{% url 'basket:add' product.pk %}">Добавить в корзину</a>
                           <br>
-                          <a href="#">Удалить из корзины</a>
+                          <a href="{% url 'basket:remove' product.pk %}">Удалить из корзины</a>
                       </div>
                   </div>
               </div>
