@@ -23,4 +23,12 @@
                 Контакты
             </a>
         </div>
+        <div class="menu-item">
+            <a href="{% url 'basket:read' %}"
+               class="{% if request.resolver_match.namespace == 'basket' %}
+                        active
+                      {% endif %}">
+                Корзина
+            </a>
+        </div>
 </ul>

@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-    {% include 'mainapp/includes/inc_menu.html' %}
     <h1>Продукты</h1>
     <div>Количество продуктов в корзине: {{ request.user|basket_total_quantity }}</div>
     <div>Общая стоимость корзины: {{ request.user|basket_total_cost }}</div>
@@ -22,7 +21,7 @@
                       <div style="color: red;">На складе осталось 2 товара. Спешите!!!!!!!</div>
                       <a href="{% url 'basket:add' hot_product.pk %}">Добавить в корзину</a>
                       <br>
-                      <a href="{% url 'basket:delete' hot_product.pk %}">Удалить из корзины</a>
+                      <a href="{% url 'basket:remove' hot_product.pk %}">Удалить из корзины</a>
                   </div>
               </div>
           </div>
