@@ -5,6 +5,9 @@
         {% csrf_token %}
         <input class="form-control" name="username" placeholder="Имя пользователя"><br>
         <input class="form-control" name="password" type="password" placeholder="Пароль"><br>
+        {% if next %}
+            <input type="hidden" name="next" value={{ next }}>
+        {% endif %}
         <input class="form-control" type="submit" value="Войти">
     </form>
 {% endblock %}
