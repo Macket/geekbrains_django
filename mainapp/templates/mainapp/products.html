@@ -1,4 +1,5 @@
 {% extends 'mainapp/base.html' %}
+{#{% load custom_tags %}#}
 
 {% block title %}
     <title>Продукты</title>
@@ -7,6 +8,8 @@
 {% block content %}
     <h1>Продукты</h1><br>
     <div>Количество продуктов в корзине: {{ basket|length }}</div>
+{#    <div>Количество продуктов в корзине: {{ request.user|basket_total_quantity }}</div>#}
+{#    <div>Общая стоимость корзины: {{ request.user|basket_total_cost }} руб.</div>#}
     <h3>Категории</h3>
     {% include 'mainapp/includes/inc_category_menu.html' %}
     <br><br>
