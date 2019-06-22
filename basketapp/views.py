@@ -1,6 +1,14 @@
-from django.shortcuts import HttpResponseRedirect, get_object_or_404
+from django.shortcuts import render, HttpResponseRedirect, get_object_or_404
 from .models import BasketSlot
 from mainapp.models import Product
+
+
+def basket(request):
+    basket = []
+    if request.user.is_authenticated:
+        basket = request.user.basket.all()
+
+    return render(request, 'basketapp/basket.html', {'basket_items': basket})
 
 
 def add(request, product_pk=None):
