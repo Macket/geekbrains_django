@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<form class="form-horizontal" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Применить">
+</form>
+</body>
+</html>
