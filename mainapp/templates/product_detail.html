@@ -1,0 +1,83 @@
+{% extends "base_generic.html" %} 
+
+{% load bootstrap4 %} 
+
+{% block content %}
+{% load staticfiles %}
+<div class="row">
+	<div class="col-xl-12 text-center">
+		<h1>{{ set_title }}</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xl-2">
+		<div class="row no-gutters">
+			
+			<div class="col-xl-2 col1">
+			</div>  
+			<div class="col-xl-10 navi">
+				<div class="head-nav">
+					<p class="head-nav-title">Категории работ</p>
+				</div>
+				<div>
+					блок с выбором категории<br>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="col-xl-8">
+		<div class="row no-gutters">
+			<div class="col-xl-12 content">
+<!--******************************************************-->
+
+<div class="row no-gutters justify-content-center">
+  <div class="col-xl-8 col-sm-4">
+		<img src="{% static "images/devushka-1.jpg" %}" class="card-img-top" alt="...">
+  </div>
+  <div class="col-xl-4 col-sm-4">
+		    <h5 class="card-title">Товар каталога детально</h5>
+		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<!--******************************************************-->
+
+			</div>
+		</div>
+	</div>
+	<div class="col-xl-2">
+		<div class="row no-gutters">
+			<!--
+			<div class="col-xl-10 navi">
+				<div class="head-nav">
+					<p class="head-nav-title">Новости</p>
+				</div>
+				<div>
+					{% if current_news %}
+					<div class="row no-gutters justify-content-center">
+						<div class="col-xl-12 col-sm-12">
+							<div class="card">
+								<img class="img-fluid card-img-top" src="{{ current_news.img.url }}" alt="Responsive image">
+
+								<div class="card-body">
+									<h5 class="card-title">{{ current_news.title  }}</h5>
+									<p style="font-size: 10px;">Новость от {{ current_news.create }}</p>
+									<a href="{% url 'post_detail' current_news.pk %}" class="btn btn-primary">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		-->
+			<div class="col-xl-2 col1">
+
+			</div> 
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}

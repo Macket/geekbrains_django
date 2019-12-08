@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% load bootstrap4 %}
+{% block content2 %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-10 text-center" > 
+		<h2>Регистрация нового пользователя</h2>
+      </div>
+    </div> 
+    <div class="row">
+    	<div class="col-md-10" >
+    		<form method="post">
+            <!--script src='https://www.google.com/recaptcha/api.js'></script-->
+            {% csrf_token %}
+            {% bootstrap_form form layout='horizontal' %}
+            
+            <!--div class="form-group g-recaptcha" data-sitekey="6Le57cMUAAAAAFWdkVVBdItoTlfodGhSnl-29mzU"></div-->
+            {% if messages %}
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            {% endif %}
+            {% buttons submit='Зарегистрироваться' %}{% endbuttons %}
+            <!--input type="submit" value="Зарегистрироваться"-->
+			</form>
+    	</div>
+    </div>	
+</div>  
+
+{% endblock %}

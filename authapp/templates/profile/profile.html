@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+
+{% block content %}
+ <div class="container">
+    <div class="row">
+      	<div class="col-md-6">
+		<h2>Профиль пользователя {{ user.username }}</h2>
+		{% if user.first_name and user.last_name %}
+		    <p>Здравствуйте, {{ user.first_name }} {{ user.last_name }}!</p>
+		{% else %}
+		    <p>Здравствуйте!</p>
+		    <p>Вы успешно вошли в систему, и можете продолжить работу как авторизованный пользователь.</p>
+		{% endif %}
+		</div>
+
+    </div>
+    
+</div>
+
+
+
+{% endblock %}
