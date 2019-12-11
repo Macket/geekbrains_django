@@ -1,0 +1,235 @@
+body {
+    background-color: #f3f3f3;
+    font-family: monospace;
+}
+
+h3 {
+    color: black;
+    font-size: 2em;;
+    font-weight: 400;
+    background-color: #eaeaea;
+}
+
+.short {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+}
+
+.long {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+.product {
+    outline: 6px solid #035678;
+    margin: 20px;
+    width: 200px;
+}
+
+.product:hover {
+    outline: 0px;
+}
+
+.menu {
+    height: 50px;
+    width: 100%;
+}
+
+.menu ul {}
+
+.menu ul li {
+    list-style-type: none;
+    display: inline;
+}
+
+.menu ul li a {
+    font-size: 1.8em;
+    padding-left: 3%;
+    padding-right: 3%;
+    color: black;
+    border: 2px;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    border-bottom: 3px solid black;
+}
+
+a:hover {
+    color: red;
+}
+
+.header {
+    width: 680px;
+    margin: 0 auto;
+    text-align: left;
+    height: 350px;
+    background-image: url(../img/fon_header.jpg);
+    background-color: #F3F3F3;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.container {
+    background: #f3f3f3;
+    width: 680px;
+    margin: 0 auto;
+    
+}
+
+.container input {
+    color: #101010;
+    width: 100%;
+    clear: both;
+    /*size="100%";
+    cols="100%";*/
+}
+
+.container textarea {
+    color: #101010;
+    width: 100%;
+    clear: both;
+}
+
+.short::first-letter,
+.long::first-letter,
+li::first-letter {
+    font-size: 24px;
+    font-family: cursive;
+}
+
+input[type="submit"] {
+    background-color: #219910;
+    padding: 5px;
+    color: azure;
+    font-weight: 800;
+}
+
+.character li {
+    font: 1em Verdana, serif;
+    border: 10px;
+    color: #101010;
+    list-style-type: square;
+    padding: 10px;
+}
+
+.div {
+    float: left;
+    width: 100%;
+}
+
+.catalog-production {
+    padding: 10px;
+    width: 230px;
+    text-align: center;
+    float: left;
+}
+
+.line1 {
+    text-align: left;
+    float: left;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form_contacts input,
+textarea {
+    text-transform: capitalize;
+}
+
+.mail:focus {
+    color: green;
+    background: #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+table tr:first-child {
+    font-size: 16px;
+    background: #aca;
+    height: 40px;
+}
+
+.logo {
+    float: left;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer {
+    height: 50px;
+    background: #222;
+    color: floralwhite;
+    padding: 20px;
+    text-align: center;
+    font-size: 1em;
+    clear: both;
+}
+
+.logoimg {
+    height: 50px;
+}
+
+.content {
+    padding-top: 20px;
+    clear: both;
+    
+}
+
+.haedertext {
+    float: left;
+    margin: 20px;
+    
+}
+p {
+    font-size: 1.5em;
+}
+
+.right {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.leftimg {
+    float: left;
+    width: 40%;
+    padding: 10px;
+}
+
+.buy {
+    width: 100%;
+    color: white;
+    background: green;
+    font-size: 2em;
+    padding: 5px;
+    font-family:cursive ;
+    border: 0;
+}
+.buy:hover{
+    box-shadow: 0 0 15px green;
+}
+
+
+.a_catalog {
+    display: block;
+    
+}
+links_menu = [
+    {'href': '/', 'name': '5454'}
+    ]

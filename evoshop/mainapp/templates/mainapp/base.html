@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title|title }}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}"> </head>
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+<div class="container">
+{% include 'mainapp/includes/inc_menu.html' %}
+{% block content %}
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+</div>
+</body>
+</html>

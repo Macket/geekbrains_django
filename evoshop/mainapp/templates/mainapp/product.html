@@ -1,0 +1,20 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="content">
+        <div class="div">
+            {% for product in products %}
+            <div class="catalog-production">
+                <img src="{{ product.image }}">
+                <h3>{{ product.name }}
+                {{ MEDIA_URL }}
+                {{ product.image }}
+                </h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="footer"><span>&copy; All rights reserved</span></div>
+</div>
+{% endblock %}
