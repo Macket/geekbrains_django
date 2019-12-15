@@ -1,12 +1,34 @@
-<ul class="links-menu">
-    {% for link in links_menu %}
-        <li>
-            <a href="{% url link.href %}"
-               class="{% if request.resolver_match.url_name == link.href %}
+<ul class="menu">
+        <div class="menu-item">
+            <a href="{% url 'main' %}"
+               class="{% if request.resolver_match.url_name == 'main' %}
                         active
                       {% endif %}">
-                {{ link.name }}
+                Главная
             </a>
-        </li>
-    {% endfor %}
+        </div>
+        <div class="menu-item">
+            <a href="{% url 'products:index' %}"
+               class="{% if request.resolver_match.namespace == 'products' %}
+                        active
+                      {% endif %}">
+                Продукты
+            </a>
+        </div>
+        <div class="menu-item">
+            <a href="{% url 'contacts' %}"
+               class="{% if request.resolver_match.url_name == 'contacts' %}
+                        active
+                      {% endif %}">
+                Контакты
+            </a>
+        </div>
+        <div class="menu-item">
+            <a href="{% url 'basket:read' %}"
+               class="{% if request.resolver_match.namespace == 'basket' %}
+                        active
+                      {% endif %}">
+                Корзина
+            </a>
+        </div>
 </ul>

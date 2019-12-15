@@ -1,28 +1,26 @@
-from django.shortcuts import render
-import json, os
-from .models import Product
-
-JSON_PATH = 'mainapp/json'
-
-
-def loadMenuFromJSON():
-    with open(os.path.join(JSON_PATH, 'menu.json'), 'r') as infile:
-        return json.load(infile)
+from django.shortcuts import render, get_object_or_404
+from .models import Product, ProductCategory
 
 
 def main(request):
-    links_menu = loadMenuFromJSON()
-    context = {'links_menu': links_menu, 'username': 'alexey'}
+    context = {'username': 'alexey'}
     return render(request, 'mainapp/main.html', context)
 
 
-def products(request):
-    links_menu = loadMenuFromJSON()
-    context = {'links_menu': links_menu, 'products': Product.objects.all()}
-    return render(request, 'mainapp/products.html', context)
+def products(request, pk=None):
+    products = Product.objects.all()
+
+    if pk or pk == 0:
+        if pk != 0:
+            category = get_object_or_404(ProductCategory, pk=pk)
+            products = products.filter(category=category)
+        context = {'products': products, 'categories': ProductCategory.objects.all()}
+        return render(request, 'mainapp/products.html', context)
+    else:
+        hot_product = Product.objects.filter(is_hot=True).first()
+        context = {'hot_product': hot_product, 'categories': ProductCategory.objects.all()}
+        return render(request, 'mainapp/hot_product.html', context)
 
 
 def contacts(request):
-    links_menu = loadMenuFromJSON()
-    context = {'links_menu': links_menu}
-    return render(request, 'mainapp/contacts.html', context)
+    return render(request, 'mainapp/contacts.html')

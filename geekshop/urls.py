@@ -19,13 +19,19 @@ from django.conf.urls import include
 from mainapp import views as mainapp
 from django.conf import settings
 from django.conf.urls.static import static
+if settings.DEBUG:
+    import debug_toolbar
+
 
 urlpatterns = [
     path('', mainapp.main, name='main'),
-    path('products/', mainapp.products, name='products'),
+    path('products/', include('mainapp.urls', namespace='products')),
+    path('basket/', include('basketapp.urls', namespace='basket')),
     path('contact/', mainapp.contacts, name='contacts'),
     path('auth/', include('authapp.urls', namespace='auth')),
+    path('admin_custom/', include('adminapp.urls', namespace='admin_custom')),
     path('admin/', admin.site.urls),
+    path('__debug__/', include(debug_toolbar.urls)),
 ]
 
 if settings.DEBUG:

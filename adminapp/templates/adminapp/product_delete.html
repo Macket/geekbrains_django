@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="user_delete">
+    Уверены, что хотите удалить {{ object.name }}?
+    <form method="post">
+      {% csrf_token %}
+      <input class="btn btn-danger" type="submit" value="удалить">
+    </form>
+    <button class="btn btn-success">
+      <a href="{% url 'admin_custom:products' %}">
+        Отмена
+      </a>
+    </button>
+  </div>
+</body>
+</html>
